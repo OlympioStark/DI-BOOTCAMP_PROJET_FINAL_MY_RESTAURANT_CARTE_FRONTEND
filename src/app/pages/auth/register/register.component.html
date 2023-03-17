@@ -1,28 +1,57 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-6"></div>
-        <div class="col-6">
+    <div>
+        <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <div class="card mt-5">
-                    <div class="card-body">
-                        <h1>Inscription</h1>
-                        <div class="alert alert-danger" *ngIf="!!erreur"> {{erreur}} </div>
-                        <form class="form mt-4">
-                            <label>Lastname</label>
-                            <input class="form-control" name="lastname" type="lastname">
-                            <label>Firstname</label>
-                            <input class="form-control" name="firstname" type="firstname">
-                            <label>Addres Number</label>
-                            <input class="form-control" name="address" type="address">
-                            <label>Email</label>
-                            <input class="form-control" name="email" type="email">
-                            <label>Password</label>
-                            <input class="form-control" name="password" type="password">
+                <a class="navbar-brand" href="#">My Restaurant Carte</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                            <button class="btn btn-primary col-md-12 mt-5" type="button" (click)="register()">Se connecter</button>
-                        </form>
+            </div>
+        </nav>
+    </div>
+    <div class="container-xl">
+        <div class="row">
+            <div class="col-6 d-flex align-items-stretch">
+                <img src="../../../../assets/img/depositphotos_79575134-stock-photo-hands-holding-credit-card-and.jpg" alt="">
+            </div>
+            <div class="col-6">
+                <div class="container">
+                    <div class="card md-1">
+                        <div class="card-body">
+                            <h1>Inscription</h1>
+                            <div class="alert alert-danger" *ngIf="!!erreur"> {{erreur}} </div>
+                            <form [formGroup]="form" class="form mt-4">
+                                <p>
+                                    <tui-input formControlName="lname">
+                                        Lastname
+                                    </tui-input>
+                                </p>
+                                <p>
+                                    <tui-input formControlName="fname">
+                                        Firstname
+                                    </tui-input>
+                                </p>
+                                <p>
+                                    <tui-input-phone-international formControlName="number" class="input" [countries]="(countries | tuiSortCountries | async) || []" [(countryIsoCode)]="countryIsoCode">
+                                        Phone number
+                                    </tui-input-phone-international>
+                                </p>
+                                <p>
+                                    <tui-input formControlName="email">
+                                        Email
+                                    </tui-input>
+                                </p>
+                                <p>
+                                    <tui-input-password formControlName="password" class="">
+                                        Password
+                                    </tui-input-password>
+                                </p>
+                                <button class="btn btn-primary col-md-12 mt-5" type="button" (click)="connexion()">Se connecter</button>
+                            </form>
+                        </div>
+                        <div class="text-center">Vous avez un compte : <a routerLink="/login">Connectez vous !</a></div>
                     </div>
-                    <div class="text-center">Vous avez un compte : <a routerLink="/login">Connectez vous !</a></div>
                 </div>
             </div>
         </div>

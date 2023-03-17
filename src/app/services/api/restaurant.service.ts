@@ -12,23 +12,23 @@ export class RestaurantService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getAllCarte(): Observable<RestaurantService[]> {
+  getAllRestaurant(): Observable<RestaurantService[]> {
     return this.httpClient.get<RestaurantService[]>(this.baseURL);
   }
 
-  createCarte(restaurant: Restaurant): Observable<Object> {
+  createRestaurant(restaurant: Restaurant): Observable<Object> {
     return this.httpClient.post(this.baseURL, restaurant);
   }
 
-  getCarteById(id: number): Observable<Restaurant> {
+  getRestaurantById(id: number): Observable<Restaurant> {
     return this.httpClient.get<Restaurant>(this.baseURL +'/'+ id);
   }
 
-  updateCarte(id: number, restaurant: Restaurant): Observable<Object> {
+  updateRestaurant(id: number, restaurant: Restaurant): Observable<Object> {
     return this.httpClient.put(this.baseURL +'/'+ id, restaurant);
   }
 
-  deleteCarte(id: number): Observable<Object> {
+  deleteRestaurant(id: number): Observable<Object> {
     return this.httpClient.delete(this.baseURL +'/'+ id, {responseType:"text"})
   }
 }

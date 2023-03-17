@@ -8,27 +8,27 @@ import { Reservation } from 'src/app/models/reservation';
 })
 export class ReservationService {
 
-  private baseURL = "http://localhost:8080/api/customer";
+  private baseURL = "http://localhost:8080/api/reserv/reservation";
 
   constructor(private httpClient: HttpClient) { }
 
-  getAllCarte(): Observable<ReservationService[]> {
+  getAllReservation(): Observable<ReservationService[]> {
     return this.httpClient.get<ReservationService[]>(this.baseURL);
   }
 
-  createCarte(reservation: Reservation): Observable<Object> {
+  createReservation(reservation: Reservation): Observable<Object> {
     return this.httpClient.post(this.baseURL, reservation);
   }
 
-  getCarteById(id: number): Observable<Reservation> {
+  getReservationById(id: number): Observable<Reservation> {
     return this.httpClient.get<Reservation>(this.baseURL +'/'+ id);
   }
 
-  updateCarte(id: number, reservation: Reservation): Observable<Object> {
+  updateReservation(id: number, reservation: Reservation): Observable<Object> {
     return this.httpClient.put(this.baseURL +'/'+ id, reservation);
   }
 
-  deleteCarte(id: number): Observable<Object> {
+  deleteReservation(id: number): Observable<Object> {
     return this.httpClient.delete(this.baseURL +'/'+ id, {responseType:"text"})
   }
 }

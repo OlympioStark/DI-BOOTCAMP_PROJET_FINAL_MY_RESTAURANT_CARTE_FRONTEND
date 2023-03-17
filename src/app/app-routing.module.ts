@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { IsConnectedGuard } from './guardian/is-connected.guard';
+import { IndexComponent } from './pages/admin/index/index.component';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
@@ -22,7 +23,8 @@ const routes: Routes = [
   },
   {
     path: 'admin',
-    loadChildren : ()=> import('./modules/admin.layout.module').then(m => m.AdminLayoutModule),
+    component: IndexComponent,
+    /* loadChildren : ()=> import('./modules/admin.layout.module').then(m => m.AdminLayoutModule), */
     canActivate : [IsConnectedGuard]
   },
   {

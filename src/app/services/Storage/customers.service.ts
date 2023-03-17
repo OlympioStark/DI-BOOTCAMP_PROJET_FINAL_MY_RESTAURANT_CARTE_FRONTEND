@@ -22,7 +22,7 @@ export class CustomersService {
     return !!this.customers;
   }
 
-  getUser() : Customer{
+  getCustomer() : Customer{
    return this.customers as Customer;
   }
 }

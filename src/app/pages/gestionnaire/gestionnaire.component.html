@@ -1,0 +1,64 @@
+<!-- <div class="mt-10">
+
+    <div>
+        <h2> Liste des réservations </h2>
+    </div>
+     <div>
+        <button style="background-color: rgba(244, 123, 2, 0.957); color: white;" class="btn" (click)="goToCreateUser()">
+            Ajouter un utilisateur
+        </button>
+    </div><br>
+
+<div class="form-group col-md-6">
+    <label for="searchReservation">Rechercher une réservation</label>
+    <input type="text" class="form-control form-control-sm" id="searchReservation" [(ngModel)]="searchBoxTxt" name="searchBoxTxt" aria-describedby="userName">
+    <small id="userName" class="form-text text-muted" *ngIf="!searchBoxTxt">Veuillez entrer le nom ou le prénom du client</small>
+</div><br>
+
+
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th> Ident</th>
+                <th> Date de réservation</th>
+                <th> Heure de reservation</th>
+                <th> Client</th>
+                <th> Restaurant </th>
+                <th> Table</th>
+                <th> Amis invités</th>
+                <th> Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let reservation of reserv | searchFilter: searchBoxTxt | paginate: { itemsPerPage: 5, 
+                    currentPage: page, totalItems: totalLength}">
+                <td> {{reservation.reservation_id}} </td>
+                <td> {{reservation.reservation_date}} </td>
+                <td> {{reservation.reservation_time}} </td>
+                <td> {{reservation.restaurant}} </td>
+                <td> {{reservation.reservation_time}} </td>
+                <td> {{reservation.reservation_time}} </td>
+                <td *ngIf="reservations.status">
+                    {{val}}
+                </td>
+                <td *ngIf="!reservations.status">
+                    {{val1}}
+                </td>
+                <td>
+                    <button pButton icon="pi pi-pencil" (click)="updateUser(utilisateur.id)" class="btn btn-dark" style="padding-left: 5px;"></button>
+                    <button pButton pRipple icon="pi pi-trash" (click)="deleteUser(utilisateur.id)" class="btn btn-danger" style="margin-left: 10px; padding-left: 5px;"></button>
+                </td>
+            </tr>
+        </tbody>
+        <div *ngIf="(utils | searchFilter: searchBoxTxt).length===0">
+            <small class="text-center">Pas d'utilisateur trouvé ... </small>
+        </div>
+    </table>
+
+
+    <pagination-controls class="text-center my-pagination" (pageChange)="page = $event"></pagination-controls>
+
+</div>
+
+</div> -->

@@ -1,1 +1,48 @@
-<p>reservation works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6">
+            <div class="container">
+                <img src="../../../assets/img/images.jpg" alt="">
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="container">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <h1>Choisir son restaurant</h1>
+
+                        <form [formGroup]="form" class="form mt-4">
+                            <p>
+                                <tui-input formControlName="lname">
+                                    Lastname
+                                </tui-input>
+                            </p>
+                            <p>
+                                <tui-input formControlName="fname">
+                                    Firstname
+                                </tui-input>
+                            </p>
+                            <p>
+                                <tui-input formControlName="number">
+                                    Address number
+                                </tui-input>
+                            </p>
+                            <p>
+                                <tui-input formControlName="email">
+                                    Email
+                                </tui-input>
+                            </p>
+                            <p>
+                                <tui-input formControlName="password">
+                                    Password
+                                </tui-input>
+                            </p>
+                            <button class="btn btn-primary col-md-12 mt-5" type="button" (click)="register()">Se connecter</button>
+                        </form>
+                    </div>
+                    <div class="text-center">Vous avez un compte : <a routerLink="/login">Connectez vous !</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

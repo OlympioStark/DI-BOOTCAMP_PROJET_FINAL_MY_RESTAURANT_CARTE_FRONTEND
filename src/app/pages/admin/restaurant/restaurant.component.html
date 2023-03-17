@@ -1,1 +1,110 @@
-<p>restaurant works!</p>
+<!-- <div class="container-fluid">
+    <div class="row">
+        <div class="col-6">
+            <div class="container">
+                <img src="../../../assets/img/images.jpg" alt="">
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="container">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <h1>Enregistrement restaurant</h1>
+
+                        <form [formGroup]="form" class="form mt-4">
+                            <p>
+                                <tui-input formControlName="lname">
+                                    Lastname
+                                </tui-input>
+                            </p>
+                            <p>
+                                <tui-input formControlName="fname">
+                                    Firstname
+                                </tui-input>
+                            </p>
+                            <p>
+                                <tui-input formControlName="number">
+                                    Address number
+                                </tui-input>
+                            </p>
+                            <p>
+                                <tui-input formControlName="email">
+                                    Email
+                                </tui-input>
+                            </p>
+                            <p>
+                                <tui-input formControlName="password">
+                                    Password
+                                </tui-input>
+                            </p>
+                            <button class="btn btn-primary col-md-12 mt-5" type="button" (click)="register()">Se connecter</button>
+                        </form>
+                    </div>
+                    <div class="text-center">Vous avez un compte : <a routerLink="/login">Connectez vous !</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div>
+    <div class="container" style="margin-bottom: 5%;">
+        <mat-icon id="close-icon" style="margin-left: 100%; order: 2; font-weight: bolder;" (click)="closeDialogue()">
+            close
+        </mat-icon>
+    </div>
+
+    <div class="col-md-7 offset-md-2" style="width: 70%;">
+        <h1 id="t2" style="margin-left: 5%;"> Formulaire d'enregistrement de restaurant</h1>
+        <form [formGroup]="restaurantForm">
+            <div class="form-group">
+                <label for=""> Libellé restaurant</label>
+                <input type="text" class="form-control form-control-sm" id="libRest" formControlName="libelleRest" name="libRest">
+            </div>
+
+            <div class="form-group">
+                <label for=""> Lien photo</label>
+                <input type="text" class="form-control form-control-sm" id="pictLink" formControlName="pictureL" name="pictLink">
+            </div>
+
+            <div class="form-group">
+                <label for=""> Localisation du restaurant</label>
+                <input type="text" class="form-control form-control-sm" id="locals" formControlName="localRest" name="locals" required>
+            </div>
+
+            <!-- <div class="form-group">
+                <label for=""> Login</label>
+                <input maxlength="20" type="text" class="form-control form-control-sm" id="loginU" [(ngModel)]="user.login" name="loginU" required #loginUVar="ngModel" [ngClass]="{'is-invalid': loginUVar.touched && !loginUVar.valid}">
+            </div>
+
+            <div class="form-group">
+                <label for=""> Mot de passe</label>
+                <input minlength="12" maxlength="30" type="text" class="form-control form-control-sm" id="passW" [(ngModel)]="user.password" name="passW" required #passWVar="ngModel" [ngClass]="{'is-invalid': passWVar.touched && !passWVar.valid}">
+            </div>
+
+            <div class="form-group">
+                <label for=""> Date de création</label>
+                <input maxlength="20" type="date" class="form-control form-control-sm" id="dateC" [(ngModel)]="user.dateCreation" name="dateC" required #dateCVar="ngModel" [ngClass]="{'is-invalid': dateCVar.touched && !dateCVar.valid}">
+            </div>
+
+            <div class="row align-items-center" style="margin-top: 2.5%;">
+                <div class="col-2">
+                    <label for="utils"> Rôle :</label>
+                </div>
+                <div class="col">
+                    <input type="radio" id="Admin" name="utils" class="check" [(ngModel)]="user.role" value="Admin" required #roleVar="ngModel" [ngClass]="{'is-invalid': roleVar.touched && !roleVar.valid}">
+                    <label for="utils"> Administrateur </label>
+                </div>
+                <div class="col">
+                    <input type="radio" id="User" name="utils" class="check" [(ngModel)]="user.role" value="User" required #roleVar="ngModel" [ngClass]="{'is-invalid': roleVar.touched && !roleVar.valid}">
+                    <label for="utils"> Utilisateur </label>
+                </div>
+            </div> --><br>
+
+            <div style="margin-bottom: 2.5%;">
+                <button (click)="onSubmit()" class="btn btn-success" type="submit" style="margin-left: 10%;" [mat-dialog-close]="true"> Enregistrer </button>
+                <button (click)="goToRestaurantList()" class="btn btn-danger" style="margin-left: 40%;" [mat-dialog-close]="false"> Annuler </button>
+            </div>
+        </form>
+    </div>
+</div>
