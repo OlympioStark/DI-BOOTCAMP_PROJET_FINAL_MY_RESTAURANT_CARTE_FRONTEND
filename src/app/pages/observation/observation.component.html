@@ -1,1 +1,36 @@
-<p>observation works!</p>
+<app-navbar></app-navbar>
+
+<div class="container-xl">
+    <div class="row">
+        <div class="col-6 d-flex align-items-stretch">
+            <img src="../../../assets/img/images.jpg" alt="">
+        </div>
+        <div class="col-6">
+            <div class="container">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <h1>Invite your friend</h1>
+
+                        <form class="form mt-4">
+                            <div class="form-group">
+                                <label for=""> Share your opinion </label>
+                                <input type="text" class="form-control form-control-sm" id="libelle_observation" name="libelle_observation" [(ngModel)]="observation.libelleObserv" required #gEmailVar="ngModel" [ngClass]="{'is-invalid': gEmailVar.touched && !gEmailVar.valid}">
+                            </div>
+
+                            <!-- <div class="form-group">
+                                <label for=""> Guest email </label>
+                                <input type="email" class="form-control form-control-sm" id="guest_email" name="guest_email" [(ngModel)]="invitation.emailGuest" required #gEmailVar="ngModel" [ngClass]="{'is-invalid': gEmailVar.touched && !gEmailVar.valid}">
+                            </div>
+
+                            <div class="form-group">
+                                <label for=""> Guest number </label>
+                                <input type="text" class="form-control form-control-sm" id="guest_number" name="guest_number" [(ngModel)]="invitation.numGuest" required #gNumberVar="ngModel" [ngClass]="{'is-invalid': gNumberVar.touched && !gNumberVar.valid}">
+                            </div> -->
+                            <button class="btn btn-primary col-md-12 mt-5" type="button" (click)="shareOpinion()"> Envoyer </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -8,27 +8,27 @@ import { Invitation } from 'src/app/models/invitation';
 })
 export class InvitationService {
 
-  private baseURL = "http://localhost:8080/api/customer";
+  private baseURL = "http://localhost:8080/api/mrc/inv/invitation";
 
   constructor(private httpClient: HttpClient) { }
 
-  getAllCarte(): Observable<InvitationService[]> {
+  getAllInvitation(): Observable<InvitationService[]> {
     return this.httpClient.get<InvitationService[]>(this.baseURL);
   }
 
-  createCarte(invitation: Invitation): Observable<Object> {
+  createInvitation(invitation: Invitation): Observable<Object> {
     return this.httpClient.post(this.baseURL, invitation);
   }
 
-  getCarteById(id: number): Observable<Invitation> {
+  getInvitationById(id: number): Observable<Invitation> {
     return this.httpClient.get<Invitation>(this.baseURL +'/'+ id);
   }
 
-  updateCarte(id: number, invitation: Invitation): Observable<Object> {
+  updateInvitation(id: number, invitation: Invitation): Observable<Object> {
     return this.httpClient.put(this.baseURL +'/'+ id, invitation);
   }
 
-  deleteCarte(id: number): Observable<Object> {
+  deleteInvitation(id: number): Observable<Object> {
     return this.httpClient.delete(this.baseURL +'/'+ id, {responseType:"text"})
   }
 

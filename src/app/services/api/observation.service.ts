@@ -9,27 +9,27 @@ import { Observation } from 'src/app/models/observation';
 })
 export class ObservationService {
 
-  private baseURL = "http://localhost:8080/api/customer";
+  private baseURL = "http://localhost:8080/api/obs/observation";
 
   constructor(private httpClient: HttpClient) { }
 
-  getAllCarte(): Observable<ObservationService[]> {
+  getAllObservation(): Observable<ObservationService[]> {
     return this.httpClient.get<ObservationService[]>(this.baseURL);
   }
 
-  createCarte(observation: Observation): Observable<Object> {
+  createObservation(observation: Observation): Observable<Object> {
     return this.httpClient.post(this.baseURL, observation);
   }
 
-  getCarteById(id: number): Observable<Observation> {
+  getObservationById(id: number): Observable<Observation> {
     return this.httpClient.get<Observation>(this.baseURL +'/'+ id);
   }
 
-  updateCarte(id: number, observation: Observation): Observable<Object> {
+  updateObservation(id: number, observation: Observation): Observable<Object> {
     return this.httpClient.put(this.baseURL +'/'+ id, observation);
   }
 
-  deleteCarte(id: number): Observable<Object> {
+  deleteObservation(id: number): Observable<Object> {
     return this.httpClient.delete(this.baseURL +'/'+ id, {responseType:"text"})
   }
 

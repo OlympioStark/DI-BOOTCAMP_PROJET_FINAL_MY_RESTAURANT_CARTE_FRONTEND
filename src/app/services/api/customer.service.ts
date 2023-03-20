@@ -12,23 +12,23 @@ export class CustomerService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getAllCarte(): Observable<CustomerService[]> {
+  getAllCustomer(): Observable<CustomerService[]> {
     return this.httpClient.get<CustomerService[]>(this.baseURL);
   }
 
-  createCarte(customer: Customer): Observable<Object> {
+  createCustomer(customer: Customer): Observable<Object> {
     return this.httpClient.post(this.baseURL, customer);
   }
 
-  getCarteById(id: number): Observable<Customer> {
+  getCustomerById(id: number): Observable<Customer> {
     return this.httpClient.get<Customer>(this.baseURL +'/'+ id);
   }
 
-  updateCarte(id: number, customer: Customer): Observable<Object> {
+  updateCustomer(id: number, customer: Customer): Observable<Object> {
     return this.httpClient.put(this.baseURL +'/'+ id, customer);
   }
 
-  deleteCarte(id: number): Observable<Object> {
+  deleteCustomer(id: number): Observable<Object> {
     return this.httpClient.delete(this.baseURL +'/'+ id, {responseType:"text"})
   }
 }

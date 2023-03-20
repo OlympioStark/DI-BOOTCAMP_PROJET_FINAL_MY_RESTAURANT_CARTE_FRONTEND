@@ -13,4 +13,12 @@ export class CarouselDashboardComponent {
   @Input() description!: string;
   @Input() imageLink!: string;
 
+  @Input() title2!: string;
+  @Input() description2!: string;
+  @Input() imageLink2!: string;
+
+  @Input() title3!: string;
+  @Input() description3!: string;
+  @Input() imageLink3!: string;
+
 }

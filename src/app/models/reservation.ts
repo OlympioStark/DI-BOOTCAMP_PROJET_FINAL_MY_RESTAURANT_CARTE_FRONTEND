@@ -1,8 +1,8 @@
 export class Reservation {
 
-    reservation_id!: number;
-    reservation_date!: Date;
-    reservation_time!: String;
+    reservationId!: number;
+    reservationDate!: Date;
+    timeReservation!: String;
     status : boolean = true;
 
 }

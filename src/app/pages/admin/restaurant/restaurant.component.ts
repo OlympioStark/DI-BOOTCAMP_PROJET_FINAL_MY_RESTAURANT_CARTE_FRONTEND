@@ -15,7 +15,7 @@ export class RestaurantComponent implements OnInit {
 
   restaurantForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder,private restaurantService: RestaurantService,
+  constructor(private formBuilder: FormBuilder, private restaurantService: RestaurantService,
     private router: Router, @Inject(MAT_DIALOG_DATA) public data: any,
     public dialogueRef: MatDialogRef<RestaurantComponent>, 
     private notifService: AlertsService) { 
@@ -31,7 +31,7 @@ export class RestaurantComponent implements OnInit {
     }
   
     saveUtilisateur() {
-      this.restaurantService.createRestaurant(this.restaurantForm.value).subscribe((data) =>{
+      this.restaurantService.createRestaurant(this.restaurantForm.value).subscribe((data) => {
         console.log(data);
         this.goToRestaurantList();
         this.notifService.enregistrer().afterClosed().subscribe((repEng : any) => {

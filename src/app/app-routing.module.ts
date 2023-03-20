@@ -5,7 +5,10 @@ import { IndexComponent } from './pages/admin/index/index.component';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { InvitationComponent } from './pages/invitation/invitation.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ObservationComponent } from './pages/observation/observation.component';
+import { ReservationComponent } from './pages/reservation/reservation.component';
 
 const routes: Routes = [
 
@@ -20,6 +23,18 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'reservation',
+    component: ReservationComponent
+  },
+  {
+    path: 'invitation',
+    component: InvitationComponent
+  },
+  {
+    path: 'observation',
+    component: ObservationComponent
   },
   {
     path: 'admin',

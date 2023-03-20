@@ -1,7 +1,7 @@
 export class Restaurant {
 
-    restaurant_id!: number;
-    restaurant_wording!: string;
+    restaurantId!: number;
+    libRestaurant!: string;
     pictureLink!: string;
     localisation!: string;
 

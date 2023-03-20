@@ -5,18 +5,7 @@ import { InvitationComponent } from 'src/app/pages/invitation/invitation.compone
 import { ObservationComponent } from 'src/app/pages/observation/observation.component';
 
 const routes: Routes = [
-  {
-    path: 'reservation',
-    component: ReservationComponent
-  },
-  {
-    path: 'invitation',
-    component: InvitationComponent
-  },
-  {
-    path: 'observation',
-    component: ObservationComponent
-  }
+  
 ];
 
 @NgModule({

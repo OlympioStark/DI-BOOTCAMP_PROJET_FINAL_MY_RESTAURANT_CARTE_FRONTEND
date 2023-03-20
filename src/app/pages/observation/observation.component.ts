@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Observation } from 'src/app/models/observation';
+import { ObservationService } from 'src/app/services/api/observation.service';
 
 @Component({
   selector: 'app-observation',
@@ -6,5 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./observation.component.css']
 })
 export class ObservationComponent {
+
+  observation: Observation = new Observation();
+
+  constructor(private observationService: ObservationService) {}
+
+  shareOpinion() {
+    this.observationService.createObservation(this.observation).subscribe((response: any) => {
+      console.log-
+    })
+  }
 
 }

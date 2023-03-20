@@ -1,6 +1,6 @@
 export class Observation {
 
-    observation_id!: number;
-    libelle_observation!: string;
+    observationId!: number;
+    libelleObserv!: string;
 
 }

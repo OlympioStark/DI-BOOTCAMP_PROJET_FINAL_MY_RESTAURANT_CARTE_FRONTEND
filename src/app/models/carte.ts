@@ -1,6 +1,6 @@
 export class Carte {
 
-    carte_id!: number;
-    wording_carte!: string;
+    carteId!: number;
+    libCarte!: string;
 
 }

@@ -8,27 +8,27 @@ import { Tables } from 'src/app/models/tables';
 })
 export class TablesService {
 
-  private baseURL = "http://localhost:8080/api/tables";
+  private baseURL = "http://localhost:8080/api/tab/tables";
 
   constructor(private httpClient: HttpClient) { }
 
-  getAllCarte(): Observable<TablesService[]> {
+  getAllTable(): Observable<TablesService[]> {
     return this.httpClient.get<TablesService[]>(this.baseURL);
   }
 
-  createCarte(tables: Tables): Observable<Object> {
+  createTable(tables: Tables): Observable<Object> {
     return this.httpClient.post(this.baseURL, tables);
   }
 
-  getCarteById(id: number): Observable<Tables> {
+  getTableById(id: number): Observable<Tables> {
     return this.httpClient.get<Tables>(this.baseURL +'/'+ id);
   }
 
-  updateCarte(id: number, tables: Tables): Observable<Object> {
+  updateTable(id: number, tables: Tables): Observable<Object> {
     return this.httpClient.put(this.baseURL +'/'+ id, tables);
   }
 
-  deleteCarte(id: number): Observable<Object> {
+  deleteTable(id: number): Observable<Object> {
     return this.httpClient.delete(this.baseURL +'/'+ id, {responseType:"text"})
   }
 

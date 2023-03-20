@@ -1,9 +1,9 @@
 export class Customer {
 
-    customer_id!: number;
-    lastname!: string;
-    firstname!: string;
-    address_number!: string;
+    customerId!: number;
+    lastName!: string;
+    firstName!: string;
+    addressNumber!: string;
     email!: string;
     password!: string;
 
