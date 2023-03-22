@@ -2,28 +2,20 @@
     <div class="card mt-5">
         <div class="card-body">
             <h1>Connexion</h1>
-            <div class="alert alert-danger" *ngIf="!!erreur"> {{erreur}}</div>
-            <form [formGroup]="form">
-                <p>
-                    <tui-input formControlName="email">
-                        Email
-                    </tui-input>
-                </p>
-                <p>
-                    <tui-input formControlName="password">
-                        Password
-                    </tui-input>
-                </p>
-                <button class="btn btn-primary col-md-12 mt-5" type="button" (click)="login()">Se connecter</button>
-            </form>
-            <!-- <form class="form mt-4">
-                <label>Email</label>
-                <input class="form-control" name="email" type="email" [(ngModel)]="customer.email">
-                <label>Password</label>
-                <input class="form-control" name="password" type="password" [(ngModel)]="customer.password">
+            <div class="alert alert-danger" *ngIf="!!errorMessage"> {{errorMessage}}</div>
+            <form class="form mt-4">
+                <div class="form-group">
+                    <label for=""> Login </label>
+                    <input type="text" class="form-control form-control-sm" [(ngModel)]="loginName" name="loginName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for=""> Password </label>
+                    <input type="password" class="form-control form-control-sm" [(ngModel)]="passwordC" name="password" required>
+                </div>
 
                 <button class="btn btn-primary col-md-12 mt-5" type="button" (click)="login()">Se connecter</button>
-            </form> -->
+            </form>
             <div class="text-center">Vous n'avez pas de compte ? : <a routerLink="/register">Inscrivez vous !</a></div>
         </div>
     </div>

@@ -14,9 +14,10 @@ export class ObservationComponent {
   constructor(private observationService: ObservationService) {}
 
   shareOpinion() {
-    this.observationService.createObservation(this.observation).subscribe((response: any) => {
-      console.log-
-    })
+    this.observationService.createObservation(this.observation).subscribe((data: any) => {
+      console.log(data);
+    }, 
+    error => console.error(error));
   }
 
 }

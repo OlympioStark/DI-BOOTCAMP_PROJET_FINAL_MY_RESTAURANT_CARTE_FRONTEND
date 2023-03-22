@@ -4,6 +4,7 @@ export class Customer {
     lastName!: string;
     firstName!: string;
     addressNumber!: string;
+    custLogin!: string;
     email!: string;
     password!: string;
 

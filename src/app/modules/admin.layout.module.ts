@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
-import { DashboardComponent } from '../pages/dashboard/dashboard.component';
-import { ReservationComponent } from '../pages/reservation/reservation.component';
-import { InvitationComponent } from '../pages/invitation/invitation.component';
-import { ObservationComponent } from '../pages/observation/observation.component';
+import { IndexComponent } from '../pages/admin/index/index.component';
+import { RestaurantComponent } from "../pages/admin/restaurant/restaurant.component";
+import { TablesComponent } from '../components/tables/tables.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -12,12 +11,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { TuiRootModule, TuiDialogModule, TuiAlertModule, TuiButtonModule } from '@taiga-ui/core';
 import { TuiInputModule, TuiInputPasswordModule, TuiInputPhoneInternationalModule, TuiSortCountriesPipeModule, TuiTextAreaModule, TuiCarouselModule, TuiIslandModule } from '@taiga-ui/kit';
-import { NavbarComponent } from '../components/shared/navbar/navbar.component';
-import { HttpClientModule } from '@angular/common/http';
-import { SidebarComponent } from '../components/shared/sidebar/sidebar.component';
-import { DashboardRoutingModule } from '../routes/dashboard-routing.module';
-
-
+import { AdminRoutingModule } from '../routes/admin-routing.module';
 
 
 
@@ -43,18 +37,14 @@ import { DashboardRoutingModule } from '../routes/dashboard-routing.module';
     TuiCarouselModule,
     TuiIslandModule,
     MatDialogModule,
-    HttpClientModule,
-    DashboardRoutingModule
+    AdminRoutingModule
   ],
   declarations : [
-    DashboardComponent,
-    ReservationComponent,
-    InvitationComponent,
-    ObservationComponent,
-    NavbarComponent,
-    SidebarComponent
+    IndexComponent,
+    RestaurantComponent,
+    TablesComponent
   ]
 })
-export class CustomerLayoutModule {
+export class AdminLayoutModule {
 
 }

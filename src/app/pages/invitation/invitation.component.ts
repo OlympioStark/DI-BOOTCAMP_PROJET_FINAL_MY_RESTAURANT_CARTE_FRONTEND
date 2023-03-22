@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import {TuiCountryIsoCode} from '@taiga-ui/i18n';
 import { Invitation } from 'src/app/models/invitation';
 import { InvitationService } from 'src/app/services/api/invitation.service';
 
@@ -15,20 +16,22 @@ export class InvitationComponent {
 
   formInvitation!: FormGroup;
 
+  readonly countries = Object.values(TuiCountryIsoCode);
+ 
+
+  countryIsoCode = TuiCountryIsoCode.CI;
+
   constructor(private formBuilder: FormBuilder, private router : Router,
             private invitationService: InvitationService){ 
-    this.formInvitation = this.formBuilder.group ({
-      gFullname: ['',Validators.required],
-      gEmail: ['',Validators.required],
-      gNumber: ['', Validators.required]
-    }) 
+    /*  */
    }
 
     inviter(){
       this.invitationService.createInvitation(this.invitation).subscribe((data: any) => {
       console.log(data);
       this.goToNextPage();
-      })
+      },
+      error => console.error(error))
     }
 
     goToNextPage() {

@@ -22,7 +22,7 @@
                             <h1>Inscription</h1>
                             <div class="alert alert-danger" *ngIf="!!erreur"> {{erreur}} </div>
                             <form [formGroup]="form" class="form mt-4">
-                                <p>
+                                <!-- <p>
                                     <tui-input formControlName="lname">
                                         Lastname
                                     </tui-input>
@@ -46,7 +46,7 @@
                                     <tui-input-password formControlName="password" class="">
                                         Password
                                     </tui-input-password>
-                                </p>
+                                </p> -->
                                 <button class="btn btn-primary col-md-12 mt-5" type="button" (click)="connexion()">Se connecter</button>
                             </form>
                         </div>
