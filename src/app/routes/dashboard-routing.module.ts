@@ -4,12 +4,17 @@ import { ReservationComponent } from 'src/app/pages/reservation/reservation.comp
 import { InvitationComponent } from 'src/app/pages/invitation/invitation.component';
 import { ObservationComponent } from 'src/app/pages/observation/observation.component';
 import { DashboardComponent } from '../pages/dashboard/dashboard.component';
+import { AccueilComponent } from '../components/accueil/accueil.component';
 
 const routes: Routes = [
   {
     path: 'home',
-    component: DashboardComponent,
+    component: AccueilComponent,
     children: [
+      {
+        path: 'dash',
+        component: DashboardComponent
+      },
       {
         path: 'reservation',
         component: ReservationComponent
@@ -24,6 +29,11 @@ const routes: Routes = [
       },
     ]
   },
+  /* {
+    path: '',
+    redirectTo: "home",
+    pathMatch: 'full'
+  } */
 
 ];
 

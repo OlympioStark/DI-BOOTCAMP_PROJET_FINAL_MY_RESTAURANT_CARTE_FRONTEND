@@ -1,45 +1,63 @@
-<div class="container-xl">
-    <div class="row">
-        <div class="col-6 d-flex align-items-stretch">
-            <img src="../../../assets/img/images.jpg" alt="">
-        </div>
-        <div class="col-6">
-            <div class="container">
-                <div class="card mt-5">
-                    <div class="card-body">
-                        <h1>Choisir son restaurant</h1>
+<div class="container">
+    <div class="card mt-5">
+        <div class="card-body">
+            <h1>Choisir son restaurant</h1>
 
-                        <form class="form mt-4">
-                            <!-- <div class="form-group">
-                                <label for="restauLib"> Libellé du restaurant <label>
-                                <select class="form-control form-control-sm" id="restauLib" [(ngModel)]="reservation.restaurantReserved" name="restauLib" required #filialeVar="ngModel" > 
-                                      <option selected>--- Sélectionner le restaurant--</option>
-                                      <option *ngFor="let restau of restaurant" value= {{restau.restaurantId}}> {{restau.libRestaurant}} </option>
-                                </select>
-                            </div> -->
-
-                            <div class="form-group">
-                                <label for="dateReserv"> Date de reservation </label>
-                                <input type="text" class="form-control form-control-sm" id="dateReserv" name="dateReserv" [(ngModel)]="restaurant.reservationDate" required #libRestVar="ngModel">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="timeReserv"> Heure de reservation </label>
-                                <input type="text" class="form-control form-control-sm" id="timeReserv" name="timeReserv" [(ngModel)]="restaurant.reservationDate" required #libRestVar="ngModel">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="tableReserv"> Table réservée </label>
-                                <select class="form-control form-control-sm" id="tableReserv" [(ngModel)]="reservation.tableReserved" name="tableReserv" required #filialeVar="ngModel"> 
-                                    <option selected>--- Sélectionner la table souhaitée---</option>
-                                    <option *ngFor="let tab of tables" value= {{tab.tableId}}> {{tab.numTable}} </option>
-                                </select>
-                            </div>
-                            <button class="btn btn-primary col-md-12 mt-5" type="button" (click)="goToChoiceTable()"> Suivant </button>
-                        </form>
-                    </div>
+            <form class="form mt-4">
+                <div class="form-group">
+                    <label for="dateReserv"> Date de reservation </label>
+                    <input type="date" class="form-control form-control-sm" id="dateReserv" name="dateReserv" [(ngModel)]="reservation.reservationDate" required>
                 </div>
-            </div>
+
+                <div class="form-group">
+                    <label for="timeReserv"> Heure de reservation </label>
+                    <input type="time" class="form-control form-control-sm" id="timeReserv" name="timeReserv" [(ngModel)]="reservation.timeReservation" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="restauLib"> Libellé du restaurant </label>
+                    <!-- <input type="text" class="form-control form-control-sm" id="restauLib" name="restauLib" [(ngModel)]="reservation.restaurantReserved" required> -->
+                    <select class="form-control form-control-sm" id="restauLib" [(ngModel)]="reservation.restaurantReserved" name="restauLib" required #filialeVar="ngModel"> 
+                        <option selected>--- Sélectionner le restaurant ---</option>
+                        <option *ngFor="let restau of restaurant" value= {{restau.restaurantId}}> {{restau.libRestaurant}} </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="tableReserv"> Table réservée </label>
+                    <!-- <input type="text" class="form-control form-control-sm" id="tableReserv" name="tableReserv" [(ngModel)]="reservation.tableReserved" required> -->
+                    <select class="form-control form-control-sm" id="tableReserv" [(ngModel)]="reservation.tableReserved" name="tableReserv" required #filialeVar="ngModel"> 
+                        <option selected>--- Sélectionner la table souhaitée ---</option>
+                        <option *ngFor="let tab of table" value= {{tab.tableId}}> {{tab.numTable}} </option>
+                    </select>
+                </div>
+                <button class="btn btn-primary col-md-12 mt-5" type="button" (click)="goToChoiceTable()"> Suivant </button>
+            </form>
+
+            <!-- <form class="login-form">
+                <h1>Faire sa réservation</h1>
+                <div class="form-input-material">
+                    <input type="text" name="username" id="username" placeholder=" " autocomplete="off" class="form-control-material" required />
+                    <label for="username">Username</label>
+                </div>
+                <div class="form-input-material">
+                    <input type="password" name="password" id="password" placeholder=" " autocomplete="off" class="form-control-material" required />
+                    <label for="password">Password</label>
+                </div>
+                <div class="form-input-material">
+                    <input type="date" name="password" id="password" placeholder=" " autocomplete="off" class="form-control-material" required />
+                    <label for="password">Password</label>
+                </div>
+                <div class="form-input-material">
+                    <select class="form-control-material" id="tableReserv" [(ngModel)]="reservation.tableReserved" autocomplete="off" name="tableReserv" required /> 
+                        <option selected>--- Sélectionner la table souhaitée ---</option>
+                        <option *ngFor="let tab of tables" value= {{tab.tableId}}> {{tab.numTable}} </option>
+                    </select>
+                    <label for="tableReserv">Password</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-ghost">Login</button>
+            </form> -->
         </div>
     </div>
 </div>

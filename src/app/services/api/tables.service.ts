@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Tables } from 'src/app/models/tables';
@@ -7,8 +7,8 @@ import { Tables } from 'src/app/models/tables';
   providedIn: 'root'
 })
 export class TablesService {
-
-  private baseURL = "http://localhost:8080/api/tab/tables";
+  headers = new HttpHeaders({'content-Type':'application/json'});
+  private baseURL = "http://localhost:8080/api/mrc/tab/tables";
 
   constructor(private httpClient: HttpClient) { }
 

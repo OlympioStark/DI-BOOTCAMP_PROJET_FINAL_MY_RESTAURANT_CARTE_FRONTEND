@@ -38,13 +38,17 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
+    this.customerService.isLogin = true;
+    this.router.navigate(["/home/home"]);
+
+  
     /* const customers = this.customersService.getCustomer();
 
     if(customers?.email == this.customer.email && customers?.password == this?.customer.password)
     {
       return (this.router.navigate(["/home/dash"]));
     }
-    return (this.erreur = "Email ou mot de passe incorrect !") */
+    return (this.erreur = "Email ou mot de passe incorrect !") 
 
     this.customerService.getCustomerByLogin(this.loginName).subscribe((response: any) => {
       this.customerC = response;
@@ -55,10 +59,10 @@ export class LoginComponent implements OnInit {
 
         this.router.navigate(["/auth/login"]);
         
-        /* this.dialogueService.errorConnexion(this.pwdMessage)
+         this.dialogueService.errorConnexion(this.pwdMessage)
         .afterClosed().subscribe((res : any) => {
           console.log(res);
-        }) */
+        }) 
       } else {
         this.name = this.customerC.lastName;
         localStorage.setItem('name', this.name);
@@ -66,7 +70,7 @@ export class LoginComponent implements OnInit {
         this.connect = this.customerService.isLogin;
         this.router.navigate(["/home"]);
       } 
-    });
+    });*/
   }
 
 }

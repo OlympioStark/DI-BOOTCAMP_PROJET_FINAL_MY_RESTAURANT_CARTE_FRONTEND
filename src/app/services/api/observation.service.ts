@@ -9,7 +9,7 @@ import { Observation } from 'src/app/models/observation';
 })
 export class ObservationService {
 
-  private baseURL = "http://localhost:8080/api/obs/observation";
+  private baseURL = "http://localhost:8080/api/mrc/obs/observation";
 
   constructor(private httpClient: HttpClient) { }
 

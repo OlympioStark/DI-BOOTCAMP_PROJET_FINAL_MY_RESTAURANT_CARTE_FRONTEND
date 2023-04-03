@@ -8,7 +8,7 @@ import { Food } from 'src/app/models/food';
 })
 export class FoodService {
 
-  private baseURL = "http://localhost:8080/api/customer";
+  private baseURL = "http://localhost:8080/api/mrc/fo/food";
 
   constructor(private httpClient: HttpClient) { }
 

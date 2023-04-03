@@ -12,6 +12,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { DashboardRoutingModule } from "./routes/dashboard-routing.module";
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -39,8 +40,7 @@ import { AccueilComponent } from './components/accueil/accueil.component';
     AlertModifsComponent,
     AlertCreationComponent,
     AlertSuppressionComponent,
-    AlertDeconnexionComponent,
-    AccueilComponent,
+    AlertDeconnexionComponent
     
   ],
   imports: [
@@ -70,8 +70,8 @@ import { AccueilComponent } from './components/accueil/accueil.component';
     TuiButtonModule,
     TuiCarouselModule,
     TuiIslandModule,
-    MatDialogModule,
-    HttpClientModule */
+    MatDialogModule,*/
+    HttpClientModule 
   ],
   providers: [
     { provide: MAT_DIALOG_DATA, useValue: {} },

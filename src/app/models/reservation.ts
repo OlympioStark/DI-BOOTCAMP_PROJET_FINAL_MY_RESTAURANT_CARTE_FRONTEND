@@ -1,13 +1,10 @@
-import { Restaurant } from "./restaurant";
-import { Tables } from "./tables";
-
 export class Reservation {
 
     reservationId!: number;
-    reservationDate!: Date;
-    timeReservation!: String;
-    restaurantReserved!: Restaurant;
-    tableReserved!: Tables;
+    reservationDate!: string;
+    timeReservation!: string;
+    restaurantReserved!: string;
+    tableReserved!: string;
     status : boolean = true;
 
 }

@@ -20,7 +20,7 @@ const routes: Routes = [
   {
     path:'home',
     loadChildren : ()=> import('./modules/customer.layout.module').then(m => m.CustomerLayoutModule),
-    canActivate : [IsConnectedGuard]
+    /* canActivate : [IsConnectedGuard] */
   },
   {
     path: 'admin',
@@ -30,12 +30,12 @@ const routes: Routes = [
   {
     path: 'gestion',
     loadChildren : ()=> import('./modules/gestion.layout.module').then(m => m.GestionLayoutModule),
-    canActivate : [IsConnectedGuard]
+    /* canActivate : [IsConnectedGuard] */
   },
-  {
+  /* {
     path : '**',
     component : NotFoundComponent
-  }
+  } */
 ];
 
 @NgModule({

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Reservation } from 'src/app/models/reservation';
 import { Restaurant } from 'src/app/models/restaurant';
+import { ReservationService } from 'src/app/services/api/reservation.service';
 import { RestaurantService } from 'src/app/services/api/restaurant.service';
 
 @Component({
@@ -9,19 +11,19 @@ import { RestaurantService } from 'src/app/services/api/restaurant.service';
 })
 export class DashboardComponent implements OnInit {
   id!: number;
-  restaurant!: Restaurant[];
+  reserv!: any[];
 
-  constructor(private restaurantService: RestaurantService) {}
+  constructor(private reservationService: ReservationService) {}
 
   ngOnInit(): void {
+
+    this.reservationService.getAllReservation().subscribe((data) => {
+      console.log(data);
+      this.reserv = data;
+    })
     
   }
 
-  getPictureLink() {
-    this.restaurantService.getRestaurantById(this.id).subscribe((data : any) =>{
-      this.restaurant= this.restaurant;
-      console.log(this.restaurant)
-    })
-  }
+
 
 }

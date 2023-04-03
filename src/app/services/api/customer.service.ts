@@ -9,7 +9,7 @@ import { Customer } from 'src/app/models/customer';
 })
 export class CustomerService {
   
-  private baseURL = "http://localhost:8080/api/cust/customer";
+  private baseURL = "http://localhost:8080/api/mrc/cust/customer";
   isLogin : boolean = false;
 
   constructor(private httpClient: HttpClient, private router: Router) { }

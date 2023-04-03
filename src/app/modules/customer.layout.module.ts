@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule} from '@angular/common';
 import { DashboardComponent } from '../pages/dashboard/dashboard.component';
 import { ReservationComponent } from '../pages/reservation/reservation.component';
 import { InvitationComponent } from '../pages/invitation/invitation.component';
@@ -13,9 +14,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { TuiRootModule, TuiDialogModule, TuiAlertModule, TuiButtonModule } from '@taiga-ui/core';
 import { TuiInputModule, TuiInputPasswordModule, TuiInputPhoneInternationalModule, TuiSortCountriesPipeModule, TuiTextAreaModule, TuiCarouselModule, TuiIslandModule } from '@taiga-ui/kit';
 import { NavbarComponent } from '../components/shared/navbar/navbar.component';
-import { HttpClientModule } from '@angular/common/http';
 import { SidebarComponent } from '../components/shared/sidebar/sidebar.component';
 import { DashboardRoutingModule } from '../routes/dashboard-routing.module';
+import { AccueilComponent } from '../components/accueil/accueil.component';
 
 
 
@@ -43,7 +44,8 @@ import { DashboardRoutingModule } from '../routes/dashboard-routing.module';
     TuiCarouselModule,
     TuiIslandModule,
     MatDialogModule,
-    HttpClientModule,
+    CommonModule,
+    /* HttpClientModule, */
     DashboardRoutingModule
   ],
   declarations : [
@@ -52,7 +54,8 @@ import { DashboardRoutingModule } from '../routes/dashboard-routing.module';
     InvitationComponent,
     ObservationComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    AccueilComponent
   ]
 })
 export class CustomerLayoutModule {

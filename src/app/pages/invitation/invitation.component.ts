@@ -35,7 +35,7 @@ export class InvitationComponent {
     }
 
     goToNextPage() {
-      this.router.navigate(['/home'])
+      this.router.navigate(['/home/home'])
     }
 
     onSubmit() {
